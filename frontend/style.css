@@ -1236,9 +1236,33 @@ em { font-style: italic; }
 
 .virasat__credit {
   font-family: var(--font-devanagari);
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
   color: var(--old-paper-faint);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.virasat__socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+.virasat__social-link {
+  color: var(--muted-brass);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--dur-fast);
+}
+.virasat__social-link:hover {
+  color: var(--old-paper);
+  text-decoration: underline;
+}
+.virasat__dot {
+  color: var(--muted-brass);
+  opacity: 0.4;
 }
 
 
