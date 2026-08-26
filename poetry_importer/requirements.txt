@@ -1,0 +1,11 @@
+# ── Core dependencies ────────────────────────────────────────────────────────
+sqlalchemy>=2.0
+psycopg2-binary        # PostgreSQL driver
+python-dotenv
+
+# ── HTML parsing (only needed when importing from an HTML export) ─────────────
+beautifulsoup4
+
+# ── Optional helpers ─────────────────────────────────────────────────────────
+requests
+httpx

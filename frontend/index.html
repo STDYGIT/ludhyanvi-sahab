@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>साहिर लुधियानवी — लोग चले जाते हैं, उनकी आवाज़ रह जाती है</title>
+  <meta name="description" content="साहिर लुधियानवी (1921–1980) को एक आधुनिक श्रद्धांजलि — उनकी शायरी, नग़्मे, और विरासत।" />
+  <meta property="og:title" content="साहिर लुधियानवी — A Living Tribute" />
+  <meta property="og:description" content="लोग चले जाते हैं, उनकी आवाज़ रह जाती है।" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- 01 · NAVIGATION -->
+  <nav id="nav" class="nav" role="navigation" aria-label="Primary navigation">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__brand" aria-label="साहिर Home">
+        <span class="nav__monogram" aria-hidden="true">सा</span>
+        <span class="nav__wordmark">साहिर</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="#kalaam" class="nav__link">कलाम</a></li>
+        <li class="nav__dot" aria-hidden="true">·</li>
+        <li><a href="#naghme" class="nav__link">नग़्मे</a></li>
+        <li class="nav__dot" aria-hidden="true">·</li>
+        <li><a href="#safar" class="nav__link">सफ़र</a></li>
+        <li class="nav__dot" aria-hidden="true">·</li>
+        <li><a href="#virasat" class="nav__link">विरासत</a></li>
+      </ul>
+      <button id="nav-audio-btn" class="nav__audio-btn" aria-label="साहिर को सुनें">
+        <svg class="nav__audio-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        <span class="nav__waveform" id="nav-waveform" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 02 · HERO -->
+  <section id="hero" class="hero" aria-label="Hero">
+    <div class="hero__portrait-wrap" aria-hidden="true">
+      <div class="hero__portrait-glow"></div>
+      <img id="hero-portrait" class="hero__portrait" src="/sahir-archival.png" onerror="this.onerror=null;this.src='/sahir-portrait.jpg'" alt="साहिर लुधियानवी" loading="eager" decoding="async" />
+      <div class="hero__portrait-fade"></div>
+    </div>
+    <div class="hero__content">
+      <p id="hero-eyebrow" class="hero__eyebrow">साहिर लुधियानवी <span class="hero__eyebrow-sep">·</span> 1921 — 1980</p>
+      <div id="hero-anchor-line" class="hero__anchor-line" aria-hidden="true"></div>
+      <div class="hero__couplet" role="heading" aria-level="1">
+        <span id="hero-line1" class="hero__line hero__line--cream">लोग चले जाते हैं,</span>
+        <span id="hero-line2" class="hero__line hero__line--brass">उनकी आवाज़ रह जाती है।</span>
+      </div>
+      <p id="hero-sig" class="hero__signature">— साहिर</p>
+      <div id="hero-cta" class="hero__cta">
+        <!-- ══ SADA-E-SAHIR: BLENDED SHAYARI & SONG ══════════════════════════ -->
+        <div id="hero-blended" class="hero__blended" aria-label="कलाम-ओ-नग़्मा — Blended Verse & Song">
+          <div class="hero__blended-header">
+            <span class="hero__blended-monogram">कलाम-ओ-नग़्मा</span>
+            <span class="hero__blended-sub">लफ़्ज़ जो साज़ बन गए · Blended Verse & Song</span>
+          </div>
+
+          <div class="hero__blended-card">
+            <blockquote class="hero__blended-verse" id="hero-blended-lines">
+              <p class="hero__blended-line" id="hero-stanza-line1">बर्बादियों का सोग मनाना फ़ुज़ूल था,</p>
+              <p class="hero__blended-line hero__blended-line--brass" id="hero-stanza-line2">बर्बादियों का जश्न मनाता चला गया।</p>
+            </blockquote>
+
+            <div class="hero__blended-meta" id="hero-blended-meta">
+              <span class="hero__meta-item"><strong class="hero__meta-label">कलाम:</strong> 'तल्ख़ियाँ'</span>
+              <span class="hero__meta-sep">·</span>
+              <span class="hero__meta-item"><strong class="hero__meta-label">नग़्मा:</strong> हम दोनों (1961)</span>
+              <span class="hero__meta-sep">·</span>
+              <span class="hero__meta-item"><strong class="hero__meta-label">आवाज़:</strong> मोहम्मद रफ़ी</span>
+            </div>
+
+            <div class="hero__blended-actions">
+              <button class="hero__blended-play-btn" id="hero-stanza-play-btn" aria-label="इस शेर का सुर सुनें">
+                <span class="hero__blended-play-icon" id="hero-stanza-play-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+                <span class="hero__blended-play-text" id="hero-stanza-play-text">इस शेर का सुर सुनें</span>
+                <span class="hero__blended-timestamp" id="hero-stanza-time">[ 0:48 — 1:14 ]</span>
+                <span class="hero__blended-waveform" id="hero-stanza-wave" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </span>
+              </button>
+
+              <div class="hero__blended-nav">
+                <button class="hero__blended-nav-btn" id="hero-blended-prev" aria-label="पिछला शेर">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg>
+                </button>
+                <span class="hero__blended-counter" id="hero-blended-counter">०१ / १०</span>
+                <button class="hero__blended-nav-btn" id="hero-blended-next" aria-label="अगला शेर">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M14 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll-hint" aria-hidden="true"><div class="hero__scroll-line"></div></div>
+  </section>
+
+  <!-- 03 · KALAAM -->
+  <section id="kalaam" class="kalaam section--light" aria-label="कलाम">
+    <div class="kalaam__inner">
+      <header class="section-header">
+        <p class="section-label">कलाम</p>
+        <h2 class="section-title">The Words That Stayed</h2>
+      </header>
+      <div class="kalaam__spread">
+        <div class="kalaam__poem-number" aria-hidden="true">०१</div>
+        <blockquote id="kalaam-poem" class="kalaam__poem">
+          <div id="kalaam-poem-lines" class="kalaam__poem-lines"></div>
+          <footer class="kalaam__poem-footer">
+            <cite id="kalaam-poem-source" class="kalaam__poem-source"></cite>
+            <span id="kalaam-poem-type" class="kalaam__poem-type"></span>
+          </footer>
+        </blockquote>
+        <div class="kalaam__controls">
+          <button id="kalaam-prev" class="kalaam__ctrl" aria-label="Previous verse"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M5 12l7 7M5 12l7-7"/></svg></button>
+          <div class="kalaam__counter"><span id="kalaam-current">01</span><span class="kalaam__counter-sep"> / </span><span id="kalaam-total">—</span></div>
+          <button id="kalaam-next" class="kalaam__ctrl" aria-label="Next verse"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M14 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div id="kalaam-themes" class="kalaam__themes" role="group" aria-label="Filter by theme"></div>
+    </div>
+  </section>
+
+  <!-- 04 · NAGHME -->
+  <section id="naghme" class="naghme section--dark" aria-label="नग़्मे">
+    <div class="naghme__inner">
+      <header class="section-header section-header--dark">
+        <p class="section-label section-label--dark">नग़्मे</p>
+        <h2 class="section-title section-title--dark">The Songs That Remain</h2>
+        <p class="naghme__count" id="naghme-count">— कालजयी नग़्मे</p>
+      </header>
+      <div id="naghme-controls-bar"></div>
+      <div id="naghme-list" class="naghme__list" role="list"></div>
+    </div>
+  </section>
+
+  <!-- 05 · SAFAR -->
+  <section id="safar" class="safar section--light" aria-label="सफ़र">
+    <div class="safar__inner">
+      <header class="section-header">
+        <p class="section-label">सफ़र</p>
+        <h2 class="section-title">A Life in Fragments</h2>
+      </header>
+      <div class="safar__grid">
+        <article class="safar__fragment safar__fragment--large">
+          <span class="safar__year">١٩٢١</span>
+          <h3 class="safar__heading">Ludhiana</h3>
+          <p class="safar__body">Abdul Hayee — born into privilege and torn from it. A young man who watched his mother fight for custody, who turned poverty into poetry and the street into his classroom.</p>
+          <span class="safar__tag">जन्म · Origin</span>
+        </article>
+        <article class="safar__fragment">
+          <span class="safar__year">١٩٤٣</span>
+          <h3 class="safar__heading">Talkhiyaan</h3>
+          <p class="safar__body">His debut collection — <em>तल्ख़ियाँ</em> — bitter truths wrapped in verse. The literary world noticed. Faiz Ahmed Faiz called him a voice of a generation.</p>
+          <span class="safar__tag">शायरी · First Book</span>
+        </article>
+        <article class="safar__fragment">
+          <span class="safar__year">١٩٤٩</span>
+          <h3 class="safar__heading">Bombay</h3>
+          <p class="safar__body">Chased by warrants for sedition in Lahore, he fled to Bombay — a city that would make him immortal. The Film Industry. Guru Dutt. SD Burman. A new canvas.</p>
+          <span class="safar__tag">प्रवास · Bombay</span>
+        </article>
+        <article class="safar__fragment safar__fragment--accent">
+          <span class="safar__year">١٩٥٧</span>
+          <h3 class="safar__heading">Pyaasa</h3>
+          <p class="safar__body"><em>ये महलों, ये तख़्तों, ये ताजों की दुनिया…</em> Pyaasa became a mirror held to society. Sahir became the conscience of Indian cinema.</p>
+          <span class="safar__tag">सिनेमा · Cinema</span>
+        </article>
+        <article class="safar__fragment">
+          <span class="safar__year">١٩٦٣</span>
+          <h3 class="safar__heading">Taj Mahal</h3>
+          <p class="safar__body">He became the first lyricist to demand equal royalty as composers. The Taj Mahal controversy — a poet who owned his words, in an era that didn't let poets own anything.</p>
+          <span class="safar__tag">विद्रोह · Rebellion</span>
+        </article>
+        <article class="safar__fragment">
+          <span class="safar__year">١٩٨٠</span>
+          <h3 class="safar__heading">Silence</h3>
+          <p class="safar__body">25 October 1980. Heart failure in Bombay. He had said: <em>मैं पल दो पल का शायर हूँ।</em> He was wrong. He was forever.</p>
+          <span class="safar__tag">विदाई · Farewell</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · VIRASAT -->
+  <footer id="virasat" class="virasat section--dark" role="contentinfo" aria-label="विरासत">
+    <div class="virasat__inner">
+      <div class="virasat__statement">
+        <p id="virasat-line1" class="virasat__line virasat__line--devanagari">कुछ आवाज़ें वक़्त के साथ</p>
+        <p id="virasat-line2" class="virasat__line virasat__line--devanagari virasat__line--brass">ख़ामोश नहीं होतीं।</p>
+      </div>
+      <div class="virasat__meta">
+        <p class="virasat__name">साहिर लुधियानवी</p>
+        <p class="virasat__dates">१९२१ — १९८०</p>
+      </div>
+      <div class="virasat__divider" aria-hidden="true"></div>
+      <p class="virasat__credit">एक आधुनिक श्रद्धांजलि · A contemporary tribute</p>
+    </div>
+  </footer>
+
+  <!-- PERSISTENT MUSIC PLAYER -->
+  <div id="player" class="player" role="region" aria-label="Music player">
+    <div class="player__inner">
+      <div class="player__track">
+        <div class="player__track-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <div class="player__track-info">
+          <p class="player__track-title" id="player-title">—</p>
+          <p class="player__track-meta" id="player-meta">साहिर लुधियानवी</p>
+        </div>
+      </div>
+      <div class="player__controls">
+        <button id="player-prev" class="player__ctrl player__ctrl--sm" aria-label="Previous track"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
+        <button id="player-play" class="player__ctrl player__ctrl--lg" aria-label="Play / Pause"><svg id="player-play-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <button id="player-next" class="player__ctrl player__ctrl--sm" aria-label="Next track"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 6h-2v12h2zM5 18l8.5-6L5 6v12z"/></svg></button>
+        <div class="player__progress-wrap">
+          <span class="player__time" id="player-elapsed">0:00</span>
+          <input type="range" id="player-seek" class="player__seek" min="0" max="100" value="0" aria-label="Seek" />
+          <span class="player__time" id="player-duration">—</span>
+        </div>
+      </div>
+      <div class="player__right">
+        <div class="player__vol-wrap">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          <input type="range" id="player-vol" class="player__vol" min="0" max="100" value="80" aria-label="Volume" />
+        </div>
+        <button id="player-queue-btn" class="player__queue-btn" aria-label="Toggle queue" aria-expanded="false">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          <span id="player-queue-count" class="player__queue-count">0</span>
+        </button>
+      </div>
+    </div>
+    <div id="player-queue" class="player__queue" aria-label="Song queue" hidden>
+      <div class="player__queue-inner" id="player-queue-list"></div>
+    </div>
+  </div>
+
+  <div id="yt-player-container" aria-hidden="true" style="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;top:-9999px;left:-9999px;"></div>
+  <script src="/main.js" type="module"></script>
+</body>
+</html>

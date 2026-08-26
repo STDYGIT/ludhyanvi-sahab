@@ -1,0 +1,43 @@
+
+services:
+  # ── PostgreSQL Database ─────────────────────────────────────────────────────
+  db:
+    image: postgres:16-alpine
+    container_name: sahir-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: sahir
+      POSTGRES_PASSWORD: sahir
+      POSTGRES_DB: sahir_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend/init_db.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sahir -d sahir_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ── FastAPI Backend ─────────────────────────────────────────────────────────
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: sahir-api
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://sahir:sahir@db:5432/sahir_db
+      ALLOWED_ORIGINS: "https://your-site.netlify.app,http://localhost:5173"
+      AUDIO_DIR: /data/audio
+    volumes:
+      - ./poetry_importer/audio_downloads:/data/audio:ro
+    ports:
+      - "8000:8000"
+
+volumes:
+  pgdata:
