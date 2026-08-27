@@ -10,6 +10,9 @@ import { initPlayer } from './modules/player.js';
 import { initNav } from './modules/nav.js';
 import { initVirasat } from './modules/virasat.js';
 import { initBlendedHero } from './modules/blendedHero.js';
+import { ALL_POEMS } from './data/poems.js';
+import { ALL_SONGS } from './data/songs.js';
+import { ALL_THEMES } from './data/themes.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -194,12 +197,17 @@ async function boot() {
       fetch(`${API}/api/stanzas`).then(r => r.json()),
     ]);
   } catch (e) {
-    console.warn('API unavailable — using fallback data', e);
-    songs   = FALLBACK_SONGS;
-    poems   = FALLBACK_POEMS;
-    themes  = FALLBACK_THEMES;
+    console.warn('API unavailable — using full embedded offline dataset', e);
+    songs   = ALL_SONGS;
+    poems   = ALL_POEMS;
+    themes  = ALL_THEMES;
     stanzas = [];
   }
+
+  // Ensure fallback if API returns empty arrays
+  if (!songs.length) songs = ALL_SONGS;
+  if (!poems.length) poems = ALL_POEMS;
+  if (!themes.length) themes = ALL_THEMES;
 
   // Init modules
   const player = initPlayer(songs);
@@ -231,23 +239,5 @@ async function boot() {
     }
   });
 }
-
-/* ── FALLBACK DATA (when API is offline) ─────────────────────────────────── */
-const FALLBACK_SONGS = [
-  { id:1, title:'Yeh Dil Tum Bin Kahin Lagta Nahin', film:'Izzat', year:1968, singer:'Mohammed Rafi, Lata Mangeshkar', youtube_id:'UbrJ0QmAxiQ', audio_url:'' },
-  { id:2, title:'Milti Hai Zindagi Mein Mohabbat', film:'Ankhen', year:1968, singer:'Lata Mangeshkar', youtube_id:'3YZmK9zj3TQ', audio_url:'' },
-  { id:3, title:'Tera Mujhse Hai Pehle Ka Naata Koi', film:'Aa Gale Lag Jaa', year:1973, singer:'Kishore Kumar', youtube_id:'89lgb7dmXps', audio_url:'' },
-  { id:4, title:'Wada Karo Nahin Chodoge Tum Mera Saath', film:'Aa Gale Lag Jaa', year:1973, singer:'Kishore Kumar, Lata Mangeshkar', youtube_id:'AL2YnJsE70w', audio_url:'' },
-  { id:5, title:'Kabhi Kabhi Mere Dil Mein', film:'Kabhi Kabhie', year:1976, singer:'Lata Mangeshkar', youtube_id:'IuHMHUFXCg8', audio_url:'' },
-];
-const FALLBACK_POEMS = [
-  { id:1, title:'वो अफ़्साना', content:'वो अफ़्साना जिसे अंजाम तक लाना न हो मुमकिन\nउसे इक ख़ूब-सूरत मोड़ दे कर छोड़ना अच्छा', type:'प्रेरणादायक', source:'तल्ख़ियाँ' },
-  { id:2, title:'ले दे के', content:'ले दे के अपने पास फ़क़त इक नज़र तो है\nक्यूँ देखें ज़िंदगी को किसी की नज़र से हम', type:'ज़िंदगी', source:'तल्ख़ियाँ' },
-];
-const FALLBACK_THEMES = [
-  { id:1, slug:'mohabbat', name:'मोहब्बत' },
-  { id:2, slug:'zindagi', name:'ज़िंदगी' },
-  { id:3, slug:'dard', name:'दर्द' },
-];
 
 document.addEventListener('DOMContentLoaded', boot);
