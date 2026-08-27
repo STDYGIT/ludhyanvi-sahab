@@ -71,6 +71,13 @@ function initHtml5Audio() {
     // Notify stanza end listeners
     stanzaEndCallbacks.forEach(cb => cb());
   });
+
+  html5Audio.addEventListener('error', (e) => {
+    console.warn('HTML5 audio error — checking fallback', e);
+    if (currentIdx >= 0 && songs[currentIdx] && songs[currentIdx].youtube_id) {
+      playYouTube(songs[currentIdx].youtube_id);
+    }
+  });
 }
 
 /* ── YOUTUBE IFrame API Setup (Fallback) ─────────────────────────────────── */
@@ -156,11 +163,11 @@ function loadTrack(idx) {
     el.classList.toggle('is-active', i === idx);
   });
 
-  // Check if we have local audio URL
-  if (song.audio_url) {
-    playHtml5(song.audio_url);
-  } else if (song.youtube_id) {
+  // For full film songs, prefer YouTube streaming so backend is never needed!
+  if (song.youtube_id) {
     playYouTube(song.youtube_id);
+  } else if (song.audio_url) {
+    playHtml5(song.audio_url);
   }
 
   renderQueue();
